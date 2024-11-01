@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager Navigation
+
+<PageTitle>miggo.administrativo</PageTitle>
+
+@code {
+    bool isAuthenticated = false; // Ajuste para testar o comportamento sem autenticação
+    bool alreadyRedirected = false; // Variável para evitar redirecionamentos em loop
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // Verifica se é a primeira renderização e se o redirecionamento já foi feito
+        if (firstRender && !alreadyRedirected)
+        {
+            if (!isAuthenticated && !Navigation.Uri.Contains("/login"))
+            {
+                // Define a flag para evitar loops
+                alreadyRedirected = true;
+
+                // Redireciona para a página de login
+                Navigation.NavigateTo("/login", forceLoad: true);
+            }
+        }
+        isAuthenticated = true;
+    }
+}
+
+<!-- Envolve tudo em uma div que usa flexbox para layout -->
+<div class="d-flex vh-100">
+
+    @if (isAuthenticated)
+    {
+        <!-- Sidebar - Só é mostrado se o usuário estiver autenticado -->
+        <LeftSideBar />
+    }
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow-2">
+        @Body
+    </main>
+
+</div>

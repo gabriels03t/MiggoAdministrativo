@@ -1,0 +1,119 @@
+<div class="modal fade" id="modalCriarSolicitacao" tabindex="-1" aria-labelledby="modalCriarSolicitacaoLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCriarSolicitacaoLabel">Criar Solicitação</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <!-- Campo Cliente -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="cliente">Cliente</label>
+                                <input type="text" class="form-control" id="cliente" placeholder="Nome do Cliente">
+                            </div>
+                        </div>
+
+                        <!-- Campo Data -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="dataSolicitacao">Data</label>
+                                <input type="date" class="form-control" id="dataSolicitacao">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Campo Formato -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formato">Formato</label>
+                                <select class="form-control" id="formato">
+                                    <option value="Feed">Feed</option>
+                                    <option value="Story">Story</option>
+                                    <option value="Carrossel">Carrossel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Campo Tema -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tema">Tema</label>
+                                <input type="text" class="form-control" id="tema" placeholder="Tema">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Campo Contextos Contemporâneos -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contextos">Contextos Contemporâneos</label>
+                                <textarea class="form-control" id="contextos" rows="2"
+                                          placeholder="Ex.: Dia das mães, show da Madonna, corpus christi..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Campo Design -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="design">Design</label>
+                                <textarea class="form-control" id="design" rows="2"
+                                          placeholder="Descrição do Design, ex.: Foto de bolo em mesa de madeira..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Campo Texto na Imagem -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="textoImagem">Texto na Imagem</label>
+                                <textarea class="form-control" id="textoImagem" rows="2"
+                                          placeholder="Ex.: 100% vegano, 100% gostoso"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Campo CTA Legenda -->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ctaLegenda">CTA Legenda</label>
+                                <select class="form-control" id="ctaLegenda">
+                                    <option value="Faça sua encomenda">Faça sua encomenda</option>
+                                    <option value="Compre agora">Compre agora</option>
+                                    <option value="Saiba mais">Saiba mais</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Campo Prompt Legenda -->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="promptLegenda">Prompt Legenda</label>
+                                <textarea class="form-control" id="promptLegenda" rows="2"
+                                          placeholder="Ex.: Legenda para [descrição imagem] com título [descrição título] e CTA [descrição CTA]"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" @onclick="SalvarSolicitacao">Salvar Solicitação</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void SalvarSolicitacao()
+    {
+        // Lógica para salvar a nova solicitação.
+    }
+}

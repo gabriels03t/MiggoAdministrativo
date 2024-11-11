@@ -1,0 +1,45 @@
+<div class="modal fade" id="modalCriarUsuario" tabindex="-1" aria-labelledby="modalCriarUsuario"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCriarUsuarioLabel">Novo usuário</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- Campo Nome -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome Completo">
+                    </div>
+
+                    <!-- Campo Matrícula -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="matriculaUsuario" placeholder="Código">
+                    </div>
+
+                    <!-- Campo Senha -->
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="senhaUsuario" placeholder="Senha">
+                    </div>
+
+                    <!-- Campo Função -->
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="funcaoUsuario" placeholder="Função">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" @onclick="SalvarUsuario">Salvar usuário</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void SalvarUsuario()
+    {
+        // Lógica para salvar o novo usuario.
+    }
+}

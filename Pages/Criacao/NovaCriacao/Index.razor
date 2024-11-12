@@ -1,0 +1,105 @@
+﻿@page "/nova-criacao"
+
+
+<PageTitle>Nova Criação</PageTitle>
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 text-gray-800">Nova Criação</h1>
+    </div>
+    <div class="row">
+        <!-- Barra Lateral de Filtros -->
+        <div class="col-lg-2 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Filtros</h6>
+                </div>
+                <div class="card-body">
+                    <!-- Filtro por ID -->
+                    <div class="form-group">
+                        <label for="filtroId">ID da Solicitação</label>
+                        <input type="text" class="form-control" id="filtroId" placeholder="Digite o ID">
+                    </div>
+
+                    <!-- Filtro por Nome -->
+                    <div class="form-group">
+                        <label for="filtroCliente">Cliente</label>
+                        <input type="text" class="form-control" id="filtroCliente" placeholder="Nome do Cliente">
+                    </div>
+
+                    <!-- Filtro por Código -->
+                    <div class="form-group">
+                        <label for="filtroCliente">Data de Aprovação</label>
+                        <input type="date" class="form-control" id="filtroClienteDataAprovacao" >
+                    </div>
+
+                    <!-- Filtro por Status -->
+                    <div class="form-group">
+                        <label for="filtroStatus">Status</label>
+                        <input type="text" class="form-control" id="filtroStatus" placeholder="Status">
+                    </div>
+
+                    <!-- Filtro por Prazo de Entrega -->
+                    <div class="form-group">
+                        <label for="filtroPrazoEntrega">Prazo para Entrega</label>
+                        <input type="date" class="form-control" id="filtroPrazoEntrega">
+                    </div>
+                    
+                    <!-- Botão para Filtrar -->
+                    <button class="btn btn-primary btn-block mt-3" @onclick="FiltrarSolicitacoes">Filtrar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela de Solicitações -->
+        <div class="col-lg-10">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Criações</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Titulo</th>
+                                    <th>Data de Aprovação</th>
+                                    <th>Status</th>
+                                    <th>Prazo de Entrega</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Felipe Silva</td>
+                                    <td>Post para Instagram</td>
+                                    <td>12/10/2024</td>
+                                    <td>
+                                        <span class="badge badge-success">Entregue</span>
+                                    </td>
+                                    <td>29/10/2024</td>
+                                    <td>
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    // Método para filtrar as solicitações
+    private void FiltrarSolicitacoes()
+    {
+        // Adicione aqui a lógica para aplicar os filtros conforme necessário.
+        // Pode envolver a captura dos valores dos campos e a atualização da lista de solicitações.
+    }
+}
